@@ -1,31 +1,31 @@
 # Active Context: Personal Portfolio Website
 
 ## 1. Current Work Focus
-- Phase 4 (Contact Form & Sendgrid) implementation complete, including build configuration fix.
-- Awaiting user testing of the contact form functionality with their Sendgrid credentials.
+- Addressed Vercel deployment error related to Prisma Client initialization.
+- Awaiting user confirmation that the fix works and testing of the contact form.
 
 ## 2. Recent Changes & Decisions
-- **Phase 1-3 Completed.**
-- **Phase 4 Completed (Implementation & Fix):**
-    - `@sendgrid/mail` package installed.
-    - `.env.example` updated.
-    - `app/components/ContactForm.tsx` created.
-    - `app/routes/_index.tsx` updated with `action` function and `ContactForm` integration.
-    - **Build Fix:** Updated `remix.config.js` to include `browserNodeBuiltinsPolyfill: { modules: { fs: true, path: true } }` to resolve build errors related to Sendgrid's client-side usage of Node built-ins.
+- **Phase 1-4 Completed (Implementation & Fixes):**
+    - Contact form and Sendgrid integration implemented.
+    - Build fix for Sendgrid client-side dependencies in `remix.config.js`.
+- **Vercel Deployment Fix:**
+    - Deleted `app/db.server.ts` and `app/singleton.server.ts` (Prisma Client setup files).
+    - Updated `app/routes/healthcheck.tsx` to remove Prisma dependency and only check app responsiveness.
 - **Project Goal:** Create a "digital business card" style website, single-page, with a dark, minimalist theme.
 - **Design Theme:** Dark, minimalist.
 
 ## 3. Next Steps
-1.  **User Configuration & Testing (CRITICAL):**
-    *   User to ensure `.env` file is correctly configured with `SENDGRID_API_KEY` and verified `SENDGRID_FROM_EMAIL`.
-    *   User to ensure dev server has picked up `.env` changes (restart if necessary).
-    *   User to thoroughly test the contact form (validation, success, failure, email receipt).
-2.  **Proceed to Phase 5 (Navbar/Footer & Polish):** Upon user confirmation that the contact form works correctly.
+1.  **User Deployment & Testing:**
+    *   User to redeploy to Vercel to confirm the Prisma runtime error is resolved.
+    *   User to ensure `.env` file is correctly configured on Vercel with Sendgrid credentials.
+    *   User to thoroughly test the contact form on the deployed Vercel site.
+2.  **Proceed to Phase 5 (Navbar/Footer & Polish):** Upon user confirmation that the deployment error is fixed and the contact form works correctly.
 3.  **Update `progress.md`** after user verification.
 
 ## 4. Active Decisions & Considerations
-- The contact form relies on environment variables for Sendgrid credentials.
-- The build issue with Sendgrid client-side dependencies is resolved.
+- Removing Prisma setup entirely is the cleanest way to resolve the error for a no-DB project.
+- Health check now only verifies app responsiveness, not DB connectivity.
 
 ## 5. Open Questions for User
-- Confirmation that the contact form works as expected after configuring `.env` and testing.
+- Confirmation that the Vercel deployment error is resolved.
+- Confirmation that the contact form works as expected on Vercel after configuring environment variables there.
