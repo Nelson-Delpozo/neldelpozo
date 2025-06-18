@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import Hero from "~/components/Hero";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,26 +10,33 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center justify-center p-4">
-      <header className="text-center">
-        <h1 className="text-4xl font-bold">Nelson Delpozo</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Software & Web Developer
-        </p>
-      </header>
-
-      <main className="mt-8 text-center">
-        <p>Welcome to my digital business card.</p>
-        <p>Site under construction.</p>
-        
-        <div className="mt-8 p-4 border border-dashed border-gray-400 dark:border-gray-600">
-          <h2 className="text-2xl font-semibold">Phase 1 Complete</h2>
-          <p>Basic cleanup and dark mode setup is done.</p>
-          <p>The background of this page should be dark gray if dark mode is working.</p>
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center">
+      <Hero />
+      {/* Placeholder for Projects Section */}
+      <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-50">
+            Projects
+          </h2>
+          <p className="mt-4 text-gray-400 md:text-xl">
+            Coming soon...
+          </p>
         </div>
-      </main>
+      </section>
 
-      <footer className="mt-12 text-sm text-gray-500 dark:text-gray-500">
+      {/* Placeholder for Contact Section */}
+      <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-50">
+            Contact Me
+          </h2>
+          <p className="mt-4 text-gray-400 md:text-xl">
+            Contact form coming soon...
+          </p>
+        </div>
+      </section>
+
+      <footer className="w-full py-6 text-center text-sm text-gray-500">
         &copy; {new Date().getFullYear()} Nelson Delpozo
       </footer>
     </div>
