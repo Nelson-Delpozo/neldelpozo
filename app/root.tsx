@@ -10,7 +10,6 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -18,13 +17,9 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({ user: await getUser(request) });
-};
-
 export default function App() {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
