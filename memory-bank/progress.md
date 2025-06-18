@@ -1,26 +1,26 @@
 # Progress: Personal Portfolio Website
 
 ## 1. Current Status
-- **Phase:** Phase 2 (Hero Section) Completed.
-- **Overall Progress:** 40% (Hero section implemented with bio and image).
+- **Phase:** Phase 3 (Project Section) Completed, including image integration.
+- **Overall Progress:** 60% (Project card for SmartLynx implemented with screenshot).
 
 ## 2. What Works
 - Core Memory Bank files are up-to-date.
 - Project is significantly simplified (Phase 1).
 - Default dark theme is configured and applied.
-- `app/components/Hero.tsx` is created and displays:
-    - Name, title, and bio.
-    - `Nelson-Delpozo.jpeg` image.
+- Hero section is implemented (Phase 2).
+- `app/components/ProjectCard.tsx` is created and displays SmartLynx project details:
+    - Title, description, and link to live site (opens in new tab).
+    - Project screenshot (`smartlynx-preview.png`) is now displayed.
     - Styled with a dark, minimalist aesthetic.
-- `app/routes/_index.tsx` renders the Hero section and has placeholders for Projects and Contact sections.
+- `app/routes/_index.tsx` renders the Hero and Project sections correctly.
+- Image filename issue resolved by renaming to a web-friendly format.
 
 ## 3. What's Left to Build (High-Level for Digital Business Card)
 - **Portfolio Structure & Layout (`app/routes/_index.tsx`):**
-    - Implement Projects section (Phase 3).
     - Implement Contact section (Phase 4).
     - Simple Navigation (Phase 5, optional).
 - **Components:**
-    - `ProjectCard.tsx` (Phase 3)
     - `ContactForm.tsx` (Phase 4)
     - Minimal `Navbar.tsx` / `Footer.tsx` (Phase 5, optional)
 - **Functionality:**
@@ -28,19 +28,17 @@
     - Responsive design implementation (ongoing).
 - **Styling:**
     - Detailed implementation of the dark, minimalist theme for remaining components (ongoing).
-- **Content Integration:**
-    - Populate SmartLynx project details (title, description, link, user-provided screenshot) into `ProjectCard.tsx` (Phase 3).
 - **Environment Setup:**
     - Install `@sendgrid/mail` (Phase 4).
     - Update `.env.example` for Sendgrid (Phase 4).
 
 ## 4. Known Issues & Blockers
 - **Sendgrid API Key:** User to provide and configure in `.env` during Phase 4.
-- **SmartLynx Screenshot:** User to provide image file for Phase 3.
 
 ## 5. Next Immediate Milestones
-1.  **User Verification of Phase 2:** User to run `npm run dev` (or refresh) and confirm the Hero section looks good.
-2.  **Proceed to Phase 3 (Project Section):** Upon user confirmation.
-    *   Develop `app/components/ProjectCard.tsx`.
-    *   Integrate SmartLynx details.
-    *   Style according to dark, minimalist theme.
+1.  **User Verification of Phase 3 (with image):** User to run `npm run dev` (or refresh) and confirm the Project section (with SmartLynx card and screenshot) looks good.
+2.  **Proceed to Phase 4 (Contact Form & Sendgrid):** Upon user confirmation.
+    *   Install `@sendgrid/mail`.
+    *   Update `.env.example`.
+    *   Develop `app/components/ContactForm.tsx`.
+    *   Implement Remix `action` for form submission.
