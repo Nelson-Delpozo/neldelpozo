@@ -1,6 +1,6 @@
 export default function Hero() {
   const bio =
-    "Software and web developer with ten years experience, I use any and all current frameworks and languages depending on the project, and I am also a veteran of the US Navy and Peace Corps.";
+    "Software and web developer with ten+ years experience, I use any and all current frameworks and languages depending on the project, and I am also a veteran of the US Navy and Peace Corps.";
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 text-center">
